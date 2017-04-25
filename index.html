@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>My Vue.js Practice</title>
 </head>
 <body>
-    <!--suppress JSUnresolvedLibraryURL -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.0/vue.min.js"></script>
+<div id="counter">
+    <div v-text="count"></div>
+    <button v-on:click="countUp">Up</button>
+</div>
+<!--suppress JSUnresolvedLibraryURL -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.0/vue.min.js"></script>
+<script>
+    var myFirstViewModel = new Vue({
+        el: '#counter',
+        data: {
+            count: 0
+        },
+        methods: {
+            countUp: function () {
+                this.count++;
+            }
+        }
+    });
+</script>
 </body>
 </html>
